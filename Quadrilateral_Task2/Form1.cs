@@ -1,7 +1,10 @@
 ﻿using Quadrilateral_Task2.Classes;
+using Quadrilateral_Task2.DTO;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Quadrilateral_Task2
 {
@@ -30,12 +33,43 @@ namespace Quadrilateral_Task2
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "(*.xml)|*.xml",
+                RestoreDirectory = true,
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Title = "Choose file"
+            };
 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ClearPanel();
+                this.quadrilateral = QuadrilateralDTO.Deserialize(openFileDialog1.FileName);
+                this.labelCounter.Visible = false;
+                this.buttonDraw.Enabled = true;
+                graphics.FillPolygon(new SolidBrush(quadrilateral.Color), quadrilateral.ToArray());
+                this.buttonPolygonColor.Visible = true;
+            }
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.saveFileDialog1 = new SaveFileDialog
+            {
+                RestoreDirectory = true,
+                DefaultExt = "xml",
+                CheckPathExists = true,
+                Title = "Save your work",
+                ValidateNames = true
+            };
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (saveFileDialog1.FileName != string.Empty)
+                {
+                    QuadrilateralDTO.Serialize(quadrilateral, saveFileDialog1.FileName);               
+                }
+            }
         }
 
         #region Initlaize
@@ -45,6 +79,7 @@ namespace Quadrilateral_Task2
             this.buttonDraw.Enabled = false;
             this.graphics.Clear(Color.White);
             this.labelCounter.Visible = true;
+            this.buttonPolygonColor.Visible = false;
             this.labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";
             this.quadrilateral = new Quadrilateral();
         }
@@ -55,22 +90,24 @@ namespace Quadrilateral_Task2
         {
             MouseEventArgs me = e as MouseEventArgs;
             Point point = new Point(me.Location.X, me.Location.Y);
-            if (quadrilateral.AddPoint(point) == false && quadrilateral.IsCompleted())
+            if (!quadrilateral.IsCompleted())
             {
-                this.buttonDraw.Enabled = true;
-                this.labelCounter.Visible = false;
+                if (quadrilateral.AddPoint(point) == false)
+                {
+                    this.buttonDraw.Enabled = true;
+                    this.labelCounter.Visible = false;
+                }
+                else
+                {
+                    SetTextToLabel(this.labelCounter, string.Format("Додайте ще {0} точки щоб утворити чотириктуник ", 4 - quadrilateral.Count()));
+                }
+                graphics.FillRectangle(new SolidBrush(quadrilateral.Color), point.X, point.Y, 4, 4);
             }
-            else
-            {
-                SetTextToLabel(this.labelCounter, string.Format("Додайте ще {0} точки щоб утворити чотириктуник ", 4 - quadrilateral.Count()));
-                this.quadrilateral.Color = Color.Aqua;
-            }
-            graphics.FillRectangle(new SolidBrush(quadrilateral.Color), point.X, point.Y, 4, 4);
         }
 
         private void ButtonDraw_Click(object sender, EventArgs e)
         {
-            graphics.FillPolygon(polygonBrush, quadrilateral.ToArray());
+            graphics.FillPolygon(new SolidBrush(quadrilateral.Color), quadrilateral.ToArray());
             this.buttonPolygonColor.Visible = true;
         }
 

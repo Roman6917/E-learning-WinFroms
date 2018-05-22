@@ -44,6 +44,8 @@ namespace Quadrilateral_Task2
             this.buttonDraw = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.buttonPolygonColor = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,36 +77,36 @@ namespace Quadrilateral_Task2
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(249, 6);
             // 
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(140, 30);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(249, 6);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(249, 6);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -160,6 +162,10 @@ namespace Quadrilateral_Task2
             this.buttonPolygonColor.Visible = false;
             this.buttonPolygonColor.Click += new System.EventHandler(this.ButtonPolygonColor_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -206,6 +212,8 @@ namespace Quadrilateral_Task2
         private Button buttonDraw;
         private ColorDialog colorDialog1;
         private Button buttonPolygonColor;
+        private SaveFileDialog saveFileDialog1;
+        private OpenFileDialog openFileDialog1;
     }
 }
 

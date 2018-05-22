@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 namespace Quadrilateral_Task2.Classes
 {
     [Serializable]
-    class Quadrilateral
+    public class Quadrilateral
     {
         public const uint Size = 4;
         public List<Point> Points { get; set; }
+        public int RgbaColor { get; set; }
         public Color Color { get; set; }
 
         public Quadrilateral()
         {
             Points = new List<Point>();
+            Color = Color.Aqua;
         }
 
         public int Count()
@@ -26,7 +28,7 @@ namespace Quadrilateral_Task2.Classes
 
         public bool IsCompleted()
         {
-            return Points.TrueForAll(p => p != null);
+            return Points.Count() == Size && Points.TrueForAll(p => p != null);
         }
 
         public bool AddPoint(Point point)
@@ -43,7 +45,7 @@ namespace Quadrilateral_Task2.Classes
         {
             if (points.Count() != Quadrilateral.Size)
             {
-                throw new ArgumentException("polygon must contain only 4 points");
+                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.Size));
             }
 
             this.Points = new List<Point>(points);
