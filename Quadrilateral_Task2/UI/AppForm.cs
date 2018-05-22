@@ -81,5 +81,10 @@ namespace Quadrilateral_Task2
                 Graphic.DrawPolygon(graphics, quadrilateral);
             }
         }
+
+        private void ShapesMenu_Click(object sender, EventArgs e)
+        {
+            UI.LoadShapesMenu(shapesMenu);
+        }
     }
 }

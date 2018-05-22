@@ -35,15 +35,15 @@ namespace Quadrilateral_Task2
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.headerMenu = new System.Windows.Forms.MenuStrip();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shapesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shapesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.labelCounter = new System.Windows.Forms.Label();
             this.buttonDraw = new System.Windows.Forms.Button();
@@ -53,75 +53,76 @@ namespace Quadrilateral_Task2
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.headerMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // headerMenu
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.shapesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1269, 33);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.headerMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.headerMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenu,
+            this.shapesMenu});
+            this.headerMenu.Location = new System.Drawing.Point(0, 0);
+            this.headerMenu.Name = "headerMenu";
+            this.headerMenu.Size = new System.Drawing.Size(1269, 33);
+            this.headerMenu.TabIndex = 0;
+            this.headerMenu.Text = "menuStrip1";
             // 
-            // newToolStripMenuItem
+            // fileMenu
             // 
-            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1,
             this.newToolStripMenuItem1,
             this.toolStripSeparator2,
             this.openToolStripMenuItem,
             this.toolStripSeparator3,
             this.saveToolStripMenuItem});
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
-            this.newToolStripMenuItem.Text = "File";
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(50, 29);
+            this.fileMenu.Text = "File";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(249, 6);
             // 
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(140, 30);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.New_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(249, 6);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.Open_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(249, 6);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save_Click);
             // 
-            // shapesToolStripMenuItem
+            // shapesMenu
             // 
-            this.shapesToolStripMenuItem.Name = "shapesToolStripMenuItem";
-            this.shapesToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
-            this.shapesToolStripMenuItem.Text = "Shapes";
+            this.shapesMenu.Name = "shapesMenu";
+            this.shapesMenu.Size = new System.Drawing.Size(81, 29);
+            this.shapesMenu.Text = "Shapes";
+            this.shapesMenu.Click += new System.EventHandler(this.ShapesMenu_Click);
             // 
             // panelMain
             // 
@@ -209,12 +210,12 @@ namespace Quadrilateral_Task2
             this.Controls.Add(this.buttonDraw);
             this.Controls.Add(this.labelCounter);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.headerMenu);
+            this.MainMenuStrip = this.headerMenu;
             this.Name = "AppForm";
             this.Text = "Drawing Qquadrilaterals";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.headerMenu.ResumeLayout(false);
+            this.headerMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,12 +240,12 @@ namespace Quadrilateral_Task2
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem newToolStripMenuItem;
+        private MenuStrip headerMenu;
+        private ToolStripMenuItem fileMenu;
         private ToolStripMenuItem newToolStripMenuItem1;
         private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
-        private ToolStripMenuItem shapesToolStripMenuItem;
+        private ToolStripMenuItem shapesMenu;
         private Panel panelMain;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator2;

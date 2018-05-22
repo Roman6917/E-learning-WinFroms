@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Quadrilateral_Task2.BL;
+using System.Windows.Forms;
 
 namespace Quadrilateral_Task2.Extensions
 {
@@ -69,5 +70,14 @@ namespace Quadrilateral_Task2.Extensions
             return saveFileDialog;
         }
 
+        public static void LoadShapesMenu(ToolStripMenuItem toolStripMenuItem)
+        {
+            toolStripMenuItem.DropDownItems.Clear();
+            var figures = QuadrilateralBL.LoadFiguresList();
+            foreach (var item in figures)
+            {
+                toolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem(item));
+            }
+        }
     }
 }
