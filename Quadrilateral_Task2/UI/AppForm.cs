@@ -1,6 +1,6 @@
 ﻿using Quadrilateral_Task2.BLL;
 using Quadrilateral_Task2.POCO;
-using Quadrilateral_Task2.UI;
+using Quadrilateral_Task2.Extensions;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -48,10 +48,6 @@ namespace Quadrilateral_Task2
             }
         }
 
-
-
-
-
         private void Main_DoubleClick(object sender, EventArgs e)
         {
             MouseEventArgs me = e as MouseEventArgs;
@@ -65,7 +61,7 @@ namespace Quadrilateral_Task2
                 }
                 else
                 {
-                    UIHelpers.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити чотириктуник ", 4 - quadrilateral.Count()));
+                    UIHelpers.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.Size - quadrilateral.Count(), Quadrilateral.Size));
                 }
                 graphics.FillRectangle(new SolidBrush(quadrilateral.Color), point.X, point.Y, 4, 4);
             }

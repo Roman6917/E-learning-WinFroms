@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Quadrilateral_Task2.UI
+namespace Quadrilateral_Task2.Extensions
 {
     public static class UIHelpers
     {
