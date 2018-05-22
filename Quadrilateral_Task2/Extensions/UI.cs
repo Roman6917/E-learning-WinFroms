@@ -1,4 +1,7 @@
 ﻿using Quadrilateral_Task2.BL;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Quadrilateral_Task2.Extensions
@@ -72,12 +75,25 @@ namespace Quadrilateral_Task2.Extensions
 
         public static void LoadShapesMenu(ToolStripMenuItem toolStripMenuItem)
         {
-            toolStripMenuItem.DropDownItems.Clear();
             var figures = QuadrilateralBL.LoadFiguresList();
+            toolStripMenuItem.DropDownItems.Clear();
+            List<ToolStripMenuItem> l = new List<ToolStripMenuItem>();
             foreach (var item in figures)
             {
-                toolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem(item));
+                ToolStripMenuItem li = new ToolStripMenuItem(item)
+                {
+                    Size = new Size(252, 30)
+                };
+                li.Click += new EventHandler(ShapesMenuDropDownClick);
+                l.Add(li);
             }
+            toolStripMenuItem.DropDownItems.AddRange(l.ToArray());
         }
+
+        private static void ShapesMenuDropDownClick(object sender , EventArgs e)
+        {
+            Console.Write(sender);
+        }
+
     }
 }
