@@ -1,11 +1,7 @@
 ﻿using Quadrilateral_Task2.Classes;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Quadrilateral_Task2.DTO
@@ -15,7 +11,6 @@ namespace Quadrilateral_Task2.DTO
         public static void Serialize(Quadrilateral quadrilateral, string path)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(Quadrilateral));
-
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 quadrilateral.RgbaColor = quadrilateral.Color.ToArgb();
