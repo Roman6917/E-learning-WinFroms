@@ -9,24 +9,36 @@ namespace Quadrilateral_Task2.Extensions
             label.Text = text;
         }
 
-        public static void Enable(Control controlElement)
+        public static void Enable(params Control[] controlElements)
         {
-            controlElement.Enabled = true;
+            foreach (var item in controlElements)
+            {
+                item.Enabled = true;
+            }
         }
 
-        public static void Disable(Control controlElement)
+        public static void Disable(params Control[] controlElements)
         {
-            controlElement.Enabled = false;
+            foreach (var item in controlElements)
+            {
+                item.Enabled = false;
+            }
         }
 
-        public static void Hide(Control controlElement)
+        public static void Hide(params Control[] controlElements)
         {
-            controlElement.Visible = false;
+            foreach (var item in controlElements)
+            {
+                item.Visible = false;
+            }
         }
 
-        public static void Show(Control controlElement)
+        public static void Show(params Control[] controlElements)
         {
-            controlElement.Visible = true;
+            foreach (var item in controlElements)
+            {
+                item.Visible = true;
+            }
         }
 
         public static OpenFileDialog CreateOpenFileDialog()

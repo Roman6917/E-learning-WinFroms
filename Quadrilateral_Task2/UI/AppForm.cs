@@ -57,11 +57,11 @@ namespace Quadrilateral_Task2
                 if (quadrilateral.AddPoint(point) == false)
                 {
                     UI.Enable(buttonDraw);
-                    UI.Hide(labelCounter);
+                    UI.Hide(labelCounter, labelInfo);
                 }
                 else
                 {
-                    UI.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.Size - quadrilateral.Count(), Quadrilateral.Size));
+                    UI.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.SIZE - quadrilateral.Count(), Quadrilateral.SIZE));
                 }
                 Graphic.DrawPoint(graphics, point);
             }

@@ -35,163 +35,188 @@ namespace Quadrilateral_Task2
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            newToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            newToolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            openToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator3 = new ToolStripSeparator();
-            saveToolStripMenuItem = new ToolStripMenuItem();
-            shapesToolStripMenuItem = new ToolStripMenuItem();
-            panelMain = new Panel();
-            labelCounter = new Label();
-            buttonDraw = new Button();
-            colorDialog1 = new ColorDialog();
-            buttonPolygonColor = new Button();
-            saveFileDialog1 = new SaveFileDialog();
-            openFileDialog1 = new OpenFileDialog();
-            menuStrip1.SuspendLayout();
-            SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shapesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.labelCounter = new System.Windows.Forms.Label();
+            this.buttonDraw = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.buttonPolygonColor = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelInfo = new System.Windows.Forms.Label();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] {
-            newToolStripMenuItem,
-            shapesToolStripMenuItem});
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(1290, 33);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.shapesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1269, 33);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // newToolStripMenuItem
             // 
-            newToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            toolStripSeparator1,
-            newToolStripMenuItem1,
-            toolStripSeparator2,
-            openToolStripMenuItem,
-            toolStripSeparator3,
-            saveToolStripMenuItem});
-            newToolStripMenuItem.Name = "newToolStripMenuItem";
-            newToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
-            newToolStripMenuItem.Text = "File";
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.newToolStripMenuItem1,
+            this.toolStripSeparator2,
+            this.openToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.saveToolStripMenuItem});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
+            this.newToolStripMenuItem.Text = "File";
             // 
             // toolStripSeparator1
             // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
             // 
             // newToolStripMenuItem1
             // 
-            newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            newToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
-            newToolStripMenuItem1.Text = "New";
-            newToolStripMenuItem1.Click += new System.EventHandler(New_Click);
+            this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(140, 30);
+            this.newToolStripMenuItem1.Text = "New";
+            this.newToolStripMenuItem1.Click += new System.EventHandler(this.New_Click);
             // 
             // toolStripSeparator2
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
             // 
             // openToolStripMenuItem
             // 
-            openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            openToolStripMenuItem.Text = "Open";
-            openToolStripMenuItem.Click += new System.EventHandler(Open_Click);
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.Open_Click);
             // 
             // toolStripSeparator3
             // 
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
             // 
             // saveToolStripMenuItem
             // 
-            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            saveToolStripMenuItem.Text = "Save";
-            saveToolStripMenuItem.Click += new System.EventHandler(Save_Click);
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save_Click);
             // 
             // shapesToolStripMenuItem
             // 
-            shapesToolStripMenuItem.Name = "shapesToolStripMenuItem";
-            shapesToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
-            shapesToolStripMenuItem.Text = "Shapes";
+            this.shapesToolStripMenuItem.Name = "shapesToolStripMenuItem";
+            this.shapesToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
+            this.shapesToolStripMenuItem.Text = "Shapes";
             // 
             // panelMain
             // 
-            panelMain.BackColor = System.Drawing.Color.White;
-            panelMain.Location = new System.Drawing.Point(39, 97);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new System.Drawing.Size(713, 313);
-            panelMain.TabIndex = 1;
-            panelMain.DoubleClick += new System.EventHandler(Main_DoubleClick);
+            this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Location = new System.Drawing.Point(39, 97);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(713, 313);
+            this.panelMain.TabIndex = 1;
+            this.panelMain.DoubleClick += new System.EventHandler(this.Main_DoubleClick);
             // 
             // labelCounter
             // 
-            labelCounter.AutoSize = true;
-            labelCounter.BackColor = System.Drawing.Color.White;
-            labelCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            labelCounter.Location = new System.Drawing.Point(151, 48);
-            labelCounter.Name = "labelCounter";
-            labelCounter.Size = new System.Drawing.Size(520, 25);
-            labelCounter.TabIndex = 2;
-            labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";
+            this.labelCounter.AutoSize = true;
+            this.labelCounter.BackColor = System.Drawing.Color.White;
+            this.labelCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCounter.Location = new System.Drawing.Point(151, 48);
+            this.labelCounter.Name = "labelCounter";
+            this.labelCounter.Size = new System.Drawing.Size(520, 25);
+            this.labelCounter.TabIndex = 2;
+            this.labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";
             // 
             // buttonDraw
             // 
-            buttonDraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            buttonDraw.Enabled = false;
-            buttonDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            buttonDraw.ForeColor = System.Drawing.Color.Black;
-            buttonDraw.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            buttonDraw.Location = new System.Drawing.Point(835, 97);
-            buttonDraw.Name = "buttonDraw";
-            buttonDraw.Size = new System.Drawing.Size(152, 135);
-            buttonDraw.TabIndex = 3;
-            buttonDraw.Text = "Малювати";
-            buttonDraw.UseVisualStyleBackColor = false;
-            buttonDraw.Click += new System.EventHandler(Draw_Click);
+            this.buttonDraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonDraw.Enabled = false;
+            this.buttonDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDraw.ForeColor = System.Drawing.Color.Black;
+            this.buttonDraw.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonDraw.Location = new System.Drawing.Point(835, 97);
+            this.buttonDraw.Name = "buttonDraw";
+            this.buttonDraw.Size = new System.Drawing.Size(152, 135);
+            this.buttonDraw.TabIndex = 3;
+            this.buttonDraw.Text = "Малювати";
+            this.buttonDraw.UseVisualStyleBackColor = false;
+            this.buttonDraw.Click += new System.EventHandler(this.Draw_Click);
             // 
             // buttonPolygonColor
             // 
-            buttonPolygonColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            buttonPolygonColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            buttonPolygonColor.ForeColor = System.Drawing.Color.Black;
-            buttonPolygonColor.Location = new System.Drawing.Point(855, 265);
-            buttonPolygonColor.Name = "buttonPolygonColor";
-            buttonPolygonColor.Size = new System.Drawing.Size(105, 93);
-            buttonPolygonColor.TabIndex = 4;
-            buttonPolygonColor.Text = "Змінити колір";
-            buttonPolygonColor.UseVisualStyleBackColor = false;
-            buttonPolygonColor.Visible = false;
-            buttonPolygonColor.Click += new System.EventHandler(PolygonColor_Click);
+            this.buttonPolygonColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonPolygonColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPolygonColor.ForeColor = System.Drawing.Color.Black;
+            this.buttonPolygonColor.Location = new System.Drawing.Point(855, 265);
+            this.buttonPolygonColor.Name = "buttonPolygonColor";
+            this.buttonPolygonColor.Size = new System.Drawing.Size(105, 93);
+            this.buttonPolygonColor.TabIndex = 4;
+            this.buttonPolygonColor.Text = "Змінити колір";
+            this.buttonPolygonColor.UseVisualStyleBackColor = false;
+            this.buttonPolygonColor.Visible = false;
+            this.buttonPolygonColor.Click += new System.EventHandler(this.PolygonColor_Click);
             // 
             // openFileDialog1
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(222, 458);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.BackColor = System.Drawing.Color.White;
+            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfo.Location = new System.Drawing.Point(58, 458);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(1010, 25);
+            this.labelInfo.TabIndex = 6;
+            this.labelInfo.Text = "Нажміть лівою кнопокю мишки два рази на полотні, щоб додати точку(за або проти го" +
+    "динникової стрілки)";
             // 
             // AppForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.Navy;
-            ClientSize = new System.Drawing.Size(1290, 570);
-            Controls.Add(buttonPolygonColor);
-            Controls.Add(buttonDraw);
-            Controls.Add(labelCounter);
-            Controls.Add(panelMain);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "AppForm";
-            Text = "Drawing Qquadrilaterals";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(1269, 570);
+            this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonPolygonColor);
+            this.Controls.Add(this.buttonDraw);
+            this.Controls.Add(this.labelCounter);
+            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "AppForm";
+            this.Text = "Drawing Qquadrilaterals";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -204,8 +229,8 @@ namespace Quadrilateral_Task2
         /// </summary>
         private void Reset()
         {
-            buttonDraw.Enabled = false;
             panelMain.Refresh();
+            buttonDraw.Enabled = false;
             labelCounter.Visible = true;
             buttonPolygonColor.Visible = false;
             labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";
@@ -230,6 +255,8 @@ namespace Quadrilateral_Task2
         private Button buttonPolygonColor;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
+        private Label label1;
+        private Label labelInfo;
     }
 }
 

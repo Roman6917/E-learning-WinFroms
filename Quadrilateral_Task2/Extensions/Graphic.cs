@@ -5,6 +5,8 @@ namespace Quadrilateral_Task2.Extensions
 {
     public static class Graphic
     {
+        public const int POINT_SIZE = 4;
+
         public static void DrawPolygon(Graphics graphics,  Quadrilateral quadrilateral)
         {
             graphics.FillPolygon(new SolidBrush(quadrilateral.Color), quadrilateral.ToArray());
@@ -12,7 +14,7 @@ namespace Quadrilateral_Task2.Extensions
 
         public static void DrawPoint(Graphics graphics, Point point)
         {
-            graphics.FillRectangle(Brushes.Black, point.X, point.Y, 4, 4);
+            graphics.FillRectangle(Brushes.Black, point.X, point.Y, POINT_SIZE, POINT_SIZE);
         }
     }
 }

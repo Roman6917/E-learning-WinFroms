@@ -8,7 +8,7 @@ namespace Quadrilateral_Task2.POCO
     [Serializable]
     public class Quadrilateral
     {
-        public const uint Size = 4;
+        public const uint SIZE = 4;
         public List<Point> Points { get; set; }
         public int RgbaColor { get; set; }
         public Color Color { get; set; }
@@ -21,9 +21,9 @@ namespace Quadrilateral_Task2.POCO
 
         public Quadrilateral(params Point[] points)
         {
-            if (points.Count() != Quadrilateral.Size)
+            if (points.Count() != Quadrilateral.SIZE)
             {
-                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.Size));
+                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.SIZE));
             }
 
             Points = new List<Point>(points);
@@ -36,13 +36,13 @@ namespace Quadrilateral_Task2.POCO
 
         public bool IsCompleted()
         {
-            return Points.Count() == Size && Points.TrueForAll(p => p != null);
+            return Points.Count() == Quadrilateral.SIZE && Points.TrueForAll(p => p != null);
         }
 
         public bool AddPoint(Point point)
         {
             Points.Add(point);
-            if (Points.Count == Quadrilateral.Size)
+            if (Points.Count == Quadrilateral.SIZE)
             {
                 return false;
             }
