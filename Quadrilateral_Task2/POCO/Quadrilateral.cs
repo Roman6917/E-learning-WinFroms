@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Quadrilateral_Task2.Classes
+namespace Quadrilateral_Task2.POCO
 {
     [Serializable]
     public class Quadrilateral
@@ -21,6 +19,16 @@ namespace Quadrilateral_Task2.Classes
             Color = Color.Aqua;
         }
 
+        public Quadrilateral(params Point[] points)
+        {
+            if (points.Count() != Quadrilateral.Size)
+            {
+                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.Size));
+            }
+
+            Points = new List<Point>(points);
+        }
+
         public int Count()
         {
             return Points.Count();
@@ -33,24 +41,14 @@ namespace Quadrilateral_Task2.Classes
 
         public bool AddPoint(Point point)
         {
-            this.Points.Add(point);
-            if (this.Points.Count == Quadrilateral.Size)
+            Points.Add(point);
+            if (Points.Count == Quadrilateral.Size)
             {
                 return false;
             }
             return true;
         }
-
-        public Quadrilateral(params Point[] points)
-        {
-            if (points.Count() != Quadrilateral.Size)
-            {
-                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.Size));
-            }
-
-            this.Points = new List<Point>(points);
-        }
-
+ 
         public Point[] ToArray()
         {
             return Points.ToArray();
