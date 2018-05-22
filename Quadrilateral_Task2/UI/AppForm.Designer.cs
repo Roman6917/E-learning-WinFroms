@@ -1,5 +1,4 @@
 ﻿using Quadrilateral_Task2.POCO;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Quadrilateral_Task2
@@ -203,10 +202,10 @@ namespace Quadrilateral_Task2
         /// <summary>
         /// Reset form to initial state
         /// </summary>
-        private void Clear()
+        private void Reset()
         {
             buttonDraw.Enabled = false;
-            graphics.Clear(Color.White);
+            panelMain.Refresh();
             labelCounter.Visible = true;
             buttonPolygonColor.Visible = false;
             labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";

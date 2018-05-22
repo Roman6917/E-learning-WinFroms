@@ -4,9 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace Quadrilateral_Task2.BLL
+namespace Quadrilateral_Task2.BL
 {
-    public class QuadrilateralBLL
+    public class QuadrilateralBL
     {
         public static void Serialize(Quadrilateral quadrilateral, string path)
         {
@@ -32,8 +32,8 @@ namespace Quadrilateral_Task2.BLL
                 throw new ApplicationException(string.Format("cannot deserialize file {0}", path));
             }
             quadrilateral.Color = Color.FromArgb(quadrilateral.RgbaColor);
-
-            return quadrilateral;
+            
+return quadrilateral;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Quadrilateral_Task2.Extensions
 {
-    public static class UIHelpers
+    public static class UI
     {
         public static void SetTextToLabel(Label label, string text)
         {

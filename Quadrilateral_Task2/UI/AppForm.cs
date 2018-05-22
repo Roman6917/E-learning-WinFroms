@@ -1,4 +1,4 @@
-﻿using Quadrilateral_Task2.BLL;
+﻿using Quadrilateral_Task2.BL;
 using Quadrilateral_Task2.POCO;
 using Quadrilateral_Task2.Extensions;
 using System;
@@ -21,30 +21,30 @@ namespace Quadrilateral_Task2
 
         private void New_Click(object sender, EventArgs e)
         {
-            Clear();
+            Reset();
         }
 
         private void Open_Click(object sender, EventArgs e)
         {
-            openFileDialog1 = UIHelpers.CreateOpenFileDialog();
+            openFileDialog1 = UI.CreateOpenFileDialog();
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                quadrilateral = QuadrilateralBLL.Deserialize(openFileDialog1.FileName);
-                UIHelpers.Hide(labelCounter);
-                UIHelpers.Enable(buttonDraw);
-                UIHelpers.Show(buttonPolygonColor);
-                graphics.FillPolygon(new SolidBrush(quadrilateral.Color), quadrilateral.ToArray());
+                quadrilateral = QuadrilateralBL.Deserialize(openFileDialog1.FileName);
+                UI.Hide(labelCounter);
+                UI.Enable(buttonDraw);
+                UI.Show(buttonPolygonColor);
+                Graphic.DrawPolygon(graphics, quadrilateral);
             }
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            saveFileDialog1 = UIHelpers.CreateSaveFileDialog();
+            saveFileDialog1 = UI.CreateSaveFileDialog();
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                QuadrilateralBLL.Serialize(quadrilateral, saveFileDialog1.FileName);
+                QuadrilateralBL.Serialize(quadrilateral, saveFileDialog1.FileName);
             }
         }
 
@@ -56,28 +56,30 @@ namespace Quadrilateral_Task2
             {
                 if (quadrilateral.AddPoint(point) == false)
                 {
-                    UIHelpers.Enable(buttonDraw);
-                    UIHelpers.Hide(labelCounter);
+                    UI.Enable(buttonDraw);
+                    UI.Hide(labelCounter);
                 }
                 else
                 {
-                    UIHelpers.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.Size - quadrilateral.Count(), Quadrilateral.Size));
+                    UI.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.Size - quadrilateral.Count(), Quadrilateral.Size));
                 }
-                graphics.FillRectangle(new SolidBrush(quadrilateral.Color), point.X, point.Y, 4, 4);
+                Graphic.DrawPoint(graphics, point);
             }
         }
 
         private void Draw_Click(object sender, EventArgs e)
         {
-            graphics.FillPolygon(new SolidBrush(quadrilateral.Color), quadrilateral.ToArray());
-            UIHelpers.Show(buttonPolygonColor);
+            Graphic.DrawPolygon(graphics, quadrilateral);
+            UI.Show(buttonPolygonColor);
         }
 
         private void PolygonColor_Click(object sender, EventArgs e)
         {
-            colorDialog1.ShowDialog();
-            quadrilateral.Color = colorDialog1.Color;
-            graphics.FillPolygon(new SolidBrush(colorDialog1.Color), quadrilateral.ToArray());
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                quadrilateral.Color = colorDialog1.Color;
+                Graphic.DrawPolygon(graphics, quadrilateral);
+            }
         }
     }
 }
