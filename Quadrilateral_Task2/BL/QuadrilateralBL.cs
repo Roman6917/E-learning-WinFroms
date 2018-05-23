@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using Quadrilateral_Task2.Utils;
 
 namespace Quadrilateral_Task2.BL
 {
@@ -13,7 +14,7 @@ namespace Quadrilateral_Task2.BL
         public static List<string> LoadFiguresList()
         {
             List<string> files = null;
-            string path = GetDataDirectoryPath();
+            string path = IOUtils.GetDataDirectoryPath();
             if (Directory.Exists(path))
             {
                 files = new List<string>(Directory.GetFiles(path).Where(p => Path.GetExtension(p) == ".xml").Select(q => Path.GetFileName(q)));
@@ -24,13 +25,13 @@ namespace Quadrilateral_Task2.BL
 
         public static List<Quadrilateral> LoadFigures(string fileName)
         {
-            string path = GetDataDirectoryPath() + "\\" + fileName;
+            string path = IOUtils.GetDataDirectoryPath() + "\\" + fileName;
             if (!File.Exists(path))
             {
                 throw new IOException(string.Format("can not find file : {0}", path));
             }
             List<Quadrilateral> quadrilaterals = QuadrilateralBL.DeserializeList(path);
-            
+
             return quadrilaterals;
         }
 
@@ -62,16 +63,22 @@ namespace Quadrilateral_Task2.BL
             return quadrilaterals;
         }
 
-        #region IO helpers
-
-        public const string DATA_FOLDER_NAME = "Data";
-
-        private static string GetDataDirectoryPath()
+        public static Quadrilateral Shift(Quadrilateral quadrilateral, Point newCenter)
         {
-            return Directory.GetCurrentDirectory().Replace("bin\\Debug", DATA_FOLDER_NAME);
-        }
+            Point previouseCenter = quadrilateral.Center();
+            int xShifting = previouseCenter.X - newCenter.X;
+            int yShifting = previouseCenter.Y - newCenter.Y;
 
-        #endregion
+            var points = quadrilateral.ToArray();
+            for (int i = 0; i < points.Count(); i++)
+            {
+                points[i].X -= xShifting;
+                points[i].Y -= yShifting;
+            }
+            quadrilateral.Points = points.ToList();
+
+            return quadrilateral;
+        }
 
     }
 }

@@ -95,9 +95,8 @@ namespace Quadrilateral_Task2
 
         private void ShapesMenuDropDown_Click(object sender, EventArgs e)
         {
-            string filename = (sender as ToolStripMenuItem).Text;
-            List<Quadrilateral> newQuadrilaterals = QuadrilateralBL.LoadFigures(filename);
-            quadrilaterals.AddRange(newQuadrilaterals);
+            string filename = (sender as ToolStripMenuItem).Text;          
+            quadrilaterals.AddRange(QuadrilateralBL.LoadFigures(filename));
             Graphic.Redraw(panelMain, graphics, quadrilaterals);
         }
 
@@ -124,17 +123,7 @@ namespace Quadrilateral_Task2
                         throw new ApplicationException("");
                     }
                     quadrilaterals.Remove(activeQquadrilateral);
-                    Point previouseCenter = activeQquadrilateral.Center();
-                    int xShifting = previouseCenter.X - point.X;
-                    int yShifting = previouseCenter.Y - point.Y;
-
-                    var points = activeQquadrilateral.ToArray();
-                    for (int i = 0; i < points.Count(); i++)
-                    {
-                        points[i].X -= xShifting;
-                        points[i].Y -= yShifting;
-                    }
-                    activeQquadrilateral.Points = points.ToList();
+                    activeQquadrilateral = QuadrilateralBL.Shift(activeQquadrilateral, point);                    
                     quadrilaterals.Add(activeQquadrilateral);
                     Graphic.Redraw(panelMain, graphics, quadrilaterals);
                 }
