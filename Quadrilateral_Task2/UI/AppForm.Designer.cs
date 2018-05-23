@@ -1,6 +1,5 @@
 ﻿using Quadrilateral_Task2.POCO;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Quadrilateral_Task2
@@ -252,7 +251,7 @@ namespace Quadrilateral_Task2
             buttonPolygonColor.Visible = false;
             labelCounter.Text = "Додайте ще 4 точки щоб утворити чотириктуник";
             quadrilaterals = new List<Quadrilateral>();
-            quadrilateral = new Quadrilateral();
+            quadrilateralToDraw = new Quadrilateral();
             activeQquadrilateral = null;
             buttonCancel.Visible = false;
             labelFigureChecked.Visible = false;

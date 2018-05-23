@@ -1,7 +1,6 @@
 ﻿using Quadrilateral_Task2.BL;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Quadrilateral_Task2.Helpers
@@ -82,16 +81,11 @@ namespace Quadrilateral_Task2.Helpers
             List<ToolStripMenuItem> ul = new List<ToolStripMenuItem>();
             foreach (var item in figures)
             {
-                ToolStripMenuItem li = new ToolStripMenuItem(item)
-                {
-                    Size = new Size(252, 30)
-                };
+                ToolStripMenuItem li = new ToolStripMenuItem(item);
                 li.Click += new EventHandler(function);
                 ul.Add(li);
             }
             toolStripMenuItem.DropDownItems.AddRange(ul.ToArray());
         }
-
-
     }
 }

@@ -73,8 +73,5 @@ namespace Quadrilateral_Task2.BL
 
         #endregion
 
-
-       
-
     }
 }

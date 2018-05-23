@@ -15,10 +15,9 @@ namespace Quadrilateral_Task2
         private Graphics graphics;
         private Quadrilateral quadrilateralToDraw;
         private Quadrilateral activeQquadrilateral;
+        private List<Quadrilateral> quadrilaterals;
         private bool isFigureChecked;
         private static int doubleClickCounter;
-
-        private List<Quadrilateral> quadrilaterals;
 
         public AppForm()
         {
@@ -58,10 +57,10 @@ namespace Quadrilateral_Task2
 
         private void PanelMain_DoubleClick(object sender, EventArgs e)
         {
-            MouseEventArgs me = e as MouseEventArgs;
-            if (me.Button == MouseButtons.Left)
+            MouseEventArgs mouseEvent  = e as MouseEventArgs;
+            if (mouseEvent.Button == MouseButtons.Left)
             {
-                Point point = new Point(me.Location.X, me.Location.Y);
+                Point point = new Point(mouseEvent.Location.X, mouseEvent.Location.Y);
                 if (quadrilateralToDraw.AddPoint(point) == false && doubleClickCounter == 3)
                 {
                     quadrilaterals.Add(quadrilateralToDraw);
@@ -104,10 +103,10 @@ namespace Quadrilateral_Task2
 
         private void PanelMain_Click(object sender, EventArgs e)
         {
-            MouseEventArgs me = e as MouseEventArgs;
-            if (me.Button == MouseButtons.Right)
+            MouseEventArgs mouseEvent  = e as MouseEventArgs;
+            if (mouseEvent.Button == MouseButtons.Right)
             {
-                Point point = new Point(me.Location.X, me.Location.Y);
+                Point point = new Point(mouseEvent.Location.X, mouseEvent.Location.Y);
 
                 if (!isFigureChecked)
                 {
