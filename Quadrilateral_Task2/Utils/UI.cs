@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Quadrilateral_Task2.Helpers
+namespace Quadrilateral_Task2.Utils
 {
     public static class UI
     {

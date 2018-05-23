@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Quadrilateral_Task2.Utils
 {
-    public static class GeometryUtils
+    public static class Geometry
     {
         public static bool IsInPolygon(Point[] poly, Point point)
         {

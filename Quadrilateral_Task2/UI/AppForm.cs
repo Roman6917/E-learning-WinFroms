@@ -1,12 +1,11 @@
 ﻿using Quadrilateral_Task2.BL;
 using Quadrilateral_Task2.POCO;
-using Quadrilateral_Task2.Helpers;
+using Quadrilateral_Task2.Utils;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
-using Quadrilateral_Task2.Utils;
 
 namespace Quadrilateral_Task2
 {
@@ -109,7 +108,7 @@ namespace Quadrilateral_Task2
 
                 if (!isFigureChecked)
                 {
-                    activeQquadrilateral = quadrilaterals.FirstOrDefault(p => GeometryUtils.IsInPolygon(p.ToArray(), point) == true);
+                    activeQquadrilateral = quadrilaterals.FirstOrDefault(p => Geometry.IsInPolygon(p.ToArray(), point) == true);
                     if (activeQquadrilateral != null)
                     {
                         isFigureChecked = true;

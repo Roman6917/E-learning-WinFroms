@@ -17,7 +17,7 @@ namespace Quadrilateral_Task2.Extensions
                 bool isFound = false;
                 for (; index < list.Count(); index++)
                 {
-                    if (GeometryUtils.IsInPolygon(list.ElementAt(index).ToArray(), point) == true)
+                    if (Geometry.IsInPolygon(list.ElementAt(index).ToArray(), point) == true)
                     {
                         isFound = true;
                         break;

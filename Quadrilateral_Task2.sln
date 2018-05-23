@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quadrilateral_Task2", "Quadrilateral_Task2\Quadrilateral_Task2.csproj", "{E3DEF4DA-5CCC-49AC-8B2C-9BF33CCCFFA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quadrilateral_Task2Tests", "Quadrilateral_Task2Tests\Quadrilateral_Task2Tests.csproj", "{6ED9F591-3715-4466-A6CA-88B979400E12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E3DEF4DA-5CCC-49AC-8B2C-9BF33CCCFFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3DEF4DA-5CCC-49AC-8B2C-9BF33CCCFFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3DEF4DA-5CCC-49AC-8B2C-9BF33CCCFFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED9F591-3715-4466-A6CA-88B979400E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED9F591-3715-4466-A6CA-88B979400E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED9F591-3715-4466-A6CA-88B979400E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED9F591-3715-4466-A6CA-88B979400E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
