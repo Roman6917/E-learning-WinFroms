@@ -48,7 +48,17 @@ namespace Quadrilateral_Task2.POCO
             }
             return true;
         }
- 
+
+        public Point Center()
+        {       
+            int x = Points.Sum(p => p.X) / (int)SIZE;
+            int y = Points.Sum(p => p.Y) / (int)SIZE;
+            Point point = new Point(x,y);
+
+            return point;
+        }
+
+
         public Point[] ToArray()
         {
             return Points.ToArray();

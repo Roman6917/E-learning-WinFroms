@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Graphic.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="POCO\Quadrilateral.cs" />
     <Compile Include="BL\QuadrilateralBL.cs" />
     <Compile Include="UI\AppForm.cs">

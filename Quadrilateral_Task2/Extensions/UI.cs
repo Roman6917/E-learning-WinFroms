@@ -27,7 +27,7 @@ namespace Quadrilateral_Task2.Extensions
             {
                 item.Enabled = false;
             }
-        }
+        }       
 
         public static void Hide(params Control[] controlElements)
         {
@@ -73,27 +73,25 @@ namespace Quadrilateral_Task2.Extensions
             return saveFileDialog;
         }
 
-        public static void LoadShapesMenu(ToolStripMenuItem toolStripMenuItem)
+        public delegate void ShapesMenuDropDown_Click(object sender, EventArgs e);
+
+        public static void LoadShapesMenu(ToolStripMenuItem toolStripMenuItem, ShapesMenuDropDown_Click function)
         {
             var figures = QuadrilateralBL.LoadFiguresList();
             toolStripMenuItem.DropDownItems.Clear();
-            List<ToolStripMenuItem> l = new List<ToolStripMenuItem>();
+            List<ToolStripMenuItem> ul = new List<ToolStripMenuItem>();
             foreach (var item in figures)
             {
                 ToolStripMenuItem li = new ToolStripMenuItem(item)
                 {
                     Size = new Size(252, 30)
                 };
-                li.Click += new EventHandler(ShapesMenuDropDownClick);
-                l.Add(li);
+                li.Click += new EventHandler(function);
+                ul.Add(li);
             }
-            toolStripMenuItem.DropDownItems.AddRange(l.ToArray());
+            toolStripMenuItem.DropDownItems.AddRange(ul.ToArray());
         }
 
-        private static void ShapesMenuDropDownClick(object sender , EventArgs e)
-        {
-            Console.Write(sender);
-        }
 
     }
 }
