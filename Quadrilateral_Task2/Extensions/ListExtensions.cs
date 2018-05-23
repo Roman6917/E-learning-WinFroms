@@ -1,11 +1,8 @@
-﻿using Quadrilateral_Task2.BL;
-using Quadrilateral_Task2.POCO;
-using System;
+﻿using Quadrilateral_Task2.POCO;
+using Quadrilateral_Task2.Utils;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quadrilateral_Task2.Extensions
 {
@@ -20,7 +17,7 @@ namespace Quadrilateral_Task2.Extensions
                 bool isFound = false;
                 for (; index < list.Count(); index++)
                 {
-                    if (QuadrilateralBL.IsInPolygon(list.ElementAt(index).ToArray(), point) == true)
+                    if (GeometryUtils.IsInPolygon(list.ElementAt(index).ToArray(), point) == true)
                     {
                         isFound = true;
                         break;

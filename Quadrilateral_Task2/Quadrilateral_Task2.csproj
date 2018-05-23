@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\Graphic.cs" />
+    <Compile Include="Helpers\Graphic.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="POCO\Quadrilateral.cs" />
     <Compile Include="BL\QuadrilateralBL.cs" />
@@ -58,7 +58,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\UI.cs" />
+    <Compile Include="Helpers\UI.cs" />
+    <Compile Include="Utils\GeometryUtils.cs" />
     <EmbeddedResource Include="UI\AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
     </EmbeddedResource>

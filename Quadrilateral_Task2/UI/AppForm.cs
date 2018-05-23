@@ -1,18 +1,19 @@
 ﻿using Quadrilateral_Task2.BL;
 using Quadrilateral_Task2.POCO;
-using Quadrilateral_Task2.Extensions;
+using Quadrilateral_Task2.Helpers;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using Quadrilateral_Task2.Utils;
 
 namespace Quadrilateral_Task2
 {
     public partial class AppForm : Form
     {
         private Graphics graphics;
-        private Quadrilateral quadrilateral;
+        private Quadrilateral quadrilateralToDraw;
         private Quadrilateral activeQquadrilateral;
         private bool isFigureChecked;
         private static int doubleClickCounter;
@@ -24,7 +25,7 @@ namespace Quadrilateral_Task2
             InitializeComponent();
             graphics = panelMain.CreateGraphics();
             quadrilaterals = new List<Quadrilateral>();
-            quadrilateral = new Quadrilateral();
+            quadrilateralToDraw = new Quadrilateral();
             isFigureChecked = false;
             doubleClickCounter = 0;
         }
@@ -61,10 +62,10 @@ namespace Quadrilateral_Task2
             if (me.Button == MouseButtons.Left)
             {
                 Point point = new Point(me.Location.X, me.Location.Y);
-                if (quadrilateral.AddPoint(point) == false && doubleClickCounter == 3)
+                if (quadrilateralToDraw.AddPoint(point) == false && doubleClickCounter == 3)
                 {
-                    quadrilaterals.Add(quadrilateral);
-                    quadrilateral = new Quadrilateral();
+                    quadrilaterals.Add(quadrilateralToDraw);
+                    quadrilateralToDraw = new Quadrilateral();
                     Graphic.Redraw(panelMain, graphics, quadrilaterals);
                     doubleClickCounter = 0;
                 }
@@ -73,7 +74,7 @@ namespace Quadrilateral_Task2
                     doubleClickCounter++;
                 }
 
-                UI.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.SIZE - quadrilateral.Count(), Quadrilateral.SIZE));
+                UI.SetTextToLabel(labelCounter, string.Format("Додайте ще {0} точки щоб утворити {1}-кутник ", Quadrilateral.SIZE - quadrilateralToDraw.Count(), Quadrilateral.SIZE));
             }
         }
 
@@ -110,7 +111,7 @@ namespace Quadrilateral_Task2
 
                 if (!isFigureChecked)
                 {
-                    activeQquadrilateral = quadrilaterals.FirstOrDefault(p => QuadrilateralBL.IsInPolygon(p.ToArray(), point) == true);
+                    activeQquadrilateral = quadrilaterals.FirstOrDefault(p => GeometryUtils.IsInPolygon(p.ToArray(), point) == true);
                     if (activeQquadrilateral != null)
                     {
                         isFigureChecked = true;
@@ -119,7 +120,6 @@ namespace Quadrilateral_Task2
                 }
                 else
                 {
-
                     if (activeQquadrilateral == null)
                     {
                         throw new ApplicationException("");
@@ -146,7 +146,6 @@ namespace Quadrilateral_Task2
         {
             isFigureChecked = false;
             UI.Hide(labelFigureChecked, buttonCancel, buttonPolygonColor);
-
         }
     }
 }

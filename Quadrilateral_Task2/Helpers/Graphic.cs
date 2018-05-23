@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Quadrilateral_Task2.Extensions
+namespace Quadrilateral_Task2.Helpers
 {
     public static class Graphic
     {
