@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Quadrilateral_Task2.Classes
+namespace Quadrilateral_Task2.POCO
 {
     [Serializable]
     public class Quadrilateral
     {
-        public const uint Size = 4;
+        public const uint SIZE = 4;
         public List<Point> Points { get; set; }
         public int RgbaColor { get; set; }
         public Color Color { get; set; }
@@ -21,6 +19,16 @@ namespace Quadrilateral_Task2.Classes
             Color = Color.Aqua;
         }
 
+        public Quadrilateral(params Point[] points)
+        {
+            if (points.Count() != Quadrilateral.SIZE)
+            {
+                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.SIZE));
+            }
+
+            Points = new List<Point>(points);
+        }
+
         public int Count()
         {
             return Points.Count();
@@ -28,28 +36,28 @@ namespace Quadrilateral_Task2.Classes
 
         public bool IsCompleted()
         {
-            return Points.Count() == Size && Points.TrueForAll(p => p != null);
+            return Points.Count() == Quadrilateral.SIZE && Points.TrueForAll(p => p != null);
         }
 
         public bool AddPoint(Point point)
         {
-            this.Points.Add(point);
-            if (this.Points.Count == Quadrilateral.Size)
+            Points.Add(point);
+            if (Points.Count == Quadrilateral.SIZE)
             {
                 return false;
             }
             return true;
         }
 
-        public Quadrilateral(params Point[] points)
-        {
-            if (points.Count() != Quadrilateral.Size)
-            {
-                throw new ArgumentException(string.Format("polygon must contain only {0} points", Quadrilateral.Size));
-            }
+        public Point Center()
+        {       
+            int x = Points.Sum(p => p.X) / (int)SIZE;
+            int y = Points.Sum(p => p.Y) / (int)SIZE;
+            Point point = new Point(x,y);
 
-            this.Points = new List<Point>(points);
+            return point;
         }
+
 
         public Point[] ToArray()
         {
