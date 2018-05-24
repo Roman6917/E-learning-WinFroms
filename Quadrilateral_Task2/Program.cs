@@ -13,7 +13,14 @@ namespace Quadrilateral_Task2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppForm());
+            try
+            {
+                Application.Run(new AppForm());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Source + "\n\n" + e.Message);
+            }
         }
     }
 }
