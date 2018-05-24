@@ -46,6 +46,8 @@
       <HintPath>..\packages\MSTest.TestFramework.1.2.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -56,8 +58,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="POCO\QuadrilateralTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\GeometryUtilsTests.cs" />
+    <Compile Include="Utils\UITests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
