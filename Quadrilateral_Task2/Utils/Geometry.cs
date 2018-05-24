@@ -5,25 +5,22 @@ namespace Quadrilateral_Task2.Utils
 {
     public static class Geometry
     {
-        public static bool IsInPolygon(Point[] poly, Point point)
+        public static bool IsInPolygon(Point[] polygon, Point point)
         {
-            var coef = poly.Skip(1)
-                .Select((p, i) =>
-                (point.Y - poly[i].Y) * (p.X - poly[i].X) - (point.X - poly[i].X) * (p.Y - poly[i].Y)).ToList();
-
-            if (coef.Any(p => p == 0))
+            bool result = false;
+            int j = polygon.Count() - 1;
+            for (int i = 0; i < polygon.Count(); i++)
             {
-                return true;
-            }
-
-            for (int i = 1; i < coef.Count(); i++)
-            {
-                if (coef[i] * coef[i - 1] < 0)
+                if (polygon[i].Y < point.Y && polygon[j].Y >= point.Y || polygon[j].Y < point.Y && polygon[i].Y >= point.Y)
                 {
-                    return false;
+                    if (polygon[i].X + (point.Y - polygon[i].Y) / (polygon[j].Y - polygon[i].Y) * (polygon[j].X - polygon[i].X) < point.X)
+                    {
+                        result = !result;
+                    }
                 }
+                j = i;
             }
-            return true;
+            return result;
         }
     }
 }

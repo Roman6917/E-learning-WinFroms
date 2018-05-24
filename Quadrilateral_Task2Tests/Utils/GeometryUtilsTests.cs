@@ -20,7 +20,7 @@ namespace Quadrilateral_Task2.Utils.Tests
 
             Assert.AreEqual(true, Geometry.IsInPolygon(points, point));
 
-            point = new Point(-10,2 );
+            point = new Point(-1,2 );
 
             Assert.AreEqual(false, Geometry.IsInPolygon(points, point));
 
