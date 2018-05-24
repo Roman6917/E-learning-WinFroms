@@ -35,10 +35,10 @@ namespace Quadrilateral_Task2
 
         private void Open_Click(object sender, EventArgs e)
         {
-            Reset();
             openFileDialog1 = UI.CreateOpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                Reset();
                 quadrilaterals = QuadrilateralBL.DeserializeList(openFileDialog1.FileName);
                 Graphic.Redraw(panelMain, graphics, quadrilaterals);
             }
@@ -136,7 +136,7 @@ namespace Quadrilateral_Task2
         }
 
         private void InformationMenu_Click(object sender, EventArgs e)
-        { 
+        {
             if (UI.CreateInformationWindow() == DialogResult.Yes)
             {
                 Close();
