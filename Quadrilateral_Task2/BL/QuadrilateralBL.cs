@@ -63,17 +63,17 @@ namespace Quadrilateral_Task2.BL
             return quadrilaterals;
         }
 
-        public static Quadrilateral Shift(Quadrilateral quadrilateral, Point newCenter)
+        public static Quadrilateral MoveToPoint(Quadrilateral quadrilateral, Point newCenter)
         {
             Point previouseCenter = quadrilateral.Center();
-            int xShifting = previouseCenter.X - newCenter.X;
-            int yShifting = previouseCenter.Y - newCenter.Y;
+            int xMoveToPointing = previouseCenter.X - newCenter.X;
+            int yMoveToPointing = previouseCenter.Y - newCenter.Y;
 
             var points = quadrilateral.ToArray();
             for (int i = 0; i < points.Count(); i++)
             {
-                points[i].X -= xShifting;
-                points[i].Y -= yShifting;
+                points[i].X -= xMoveToPointing;
+                points[i].Y -= yMoveToPointing;
             }
             quadrilateral.Points = points.ToList();
 

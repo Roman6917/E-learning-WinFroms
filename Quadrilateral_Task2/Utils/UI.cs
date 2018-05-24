@@ -7,6 +7,31 @@ namespace Quadrilateral_Task2.Utils
 {
     public static class UI
     {
+        #region infromation message 
+        private const string INFORMATION_MESSAGE = "Загальне :\n" +
+                "\t1) Для того щоб намалювати чотирикутник, клікніть два\n" +
+                "\tрази мишкою" +
+                "на полотні(це додасть одну його точку).\n" +
+                "\t2) Повторіть цю дію ще 3 рази і у вас зявиться чотирикутник.\n" +
+                "\t3) Якщо нажмене на нього правою кнопкою миші, у вас\n" +
+                "\t зявиться підказка, що ви вибрали цей чотириктуник.\n" +
+                "\t4) Якщо ще раз нажмете правою кнопокю на полотні, то\n" +
+                "\t ваш чотирикутник" +
+                "перемістить в цю точку.\n" +
+                "\t5) Нажавши на кнопку змінити колір, ви зміните колір.\n" +
+                "File :\n" +
+                "\tЩоб зберегти малюнок нажміть кнопку 'Save'.\n" +
+                "\tЩоб створити новий малюнок нажміть кнопку 'New'.\n" +
+                "\tЩоб відкрити якусь зі своїх робіт, нажміть кнопку 'Open'\n" +
+                "\tі виберіть відповідний файл.\n" +
+                 "Shapes :\n" +
+                "\tЯкщо ви збережете свою роботу в папку 'Data' в проекті\n" +
+                "\tто в меню 'Shapes'\n" +
+                "\tваш малюнок буде збережено як шаблон\n" +
+                "\t(ви зможете  застосувати його до поточного малюнку і далі предагувати)";
+
+        #endregion
+
         public static void SetTextToLabel(Label label, string text)
         {
             label.Text = text;
@@ -26,7 +51,7 @@ namespace Quadrilateral_Task2.Utils
             {
                 item.Enabled = false;
             }
-        }       
+        }
 
         public static void Hide(params Control[] controlElements)
         {
@@ -70,6 +95,14 @@ namespace Quadrilateral_Task2.Utils
             };
 
             return saveFileDialog;
+        }
+
+        public static DialogResult CreateInformationWindow()
+        {
+            string caption = "Information box";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+            return MessageBox.Show(INFORMATION_MESSAGE, caption, buttons);
         }
 
         public delegate void ShapesMenuDropDown_Click(object sender, EventArgs e);

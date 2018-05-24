@@ -3,67 +3,67 @@
   <Quadrilateral>
     <Points>
       <Point>
-        <X>25</X>
-        <Y>75</Y>
+        <X>19</X>
+        <Y>33</Y>
       </Point>
       <Point>
-        <X>81</X>
-        <Y>67</Y>
+        <X>102</X>
+        <Y>34</Y>
       </Point>
       <Point>
-        <X>93</X>
-        <Y>121</Y>
+        <X>115</X>
+        <Y>136</Y>
       </Point>
       <Point>
-        <X>48</X>
-        <Y>123</Y>
+        <X>50</X>
+        <Y>131</Y>
       </Point>
     </Points>
-    <RgbaColor>-8355712</RgbaColor>
+    <RgbaColor>-8355776</RgbaColor>
     <Color />
   </Quadrilateral>
   <Quadrilateral>
     <Points>
       <Point>
-        <X>213</X>
-        <Y>-2</Y>
+        <X>197</X>
+        <Y>49</Y>
       </Point>
       <Point>
-        <X>268</X>
-        <Y>3</Y>
+        <X>280</X>
+        <Y>52</Y>
       </Point>
       <Point>
-        <X>278</X>
-        <Y>51</Y>
+        <X>277</X>
+        <Y>130</Y>
       </Point>
       <Point>
-        <X>150</X>
-        <Y>99</Y>
-      </Point>
-    </Points>
-    <RgbaColor>-12550016</RgbaColor>
-    <Color />
-  </Quadrilateral>
-  <Quadrilateral>
-    <Points>
-      <Point>
-        <X>219</X>
+        <X>210</X>
         <Y>158</Y>
       </Point>
+    </Points>
+    <RgbaColor>-8323200</RgbaColor>
+    <Color />
+  </Quadrilateral>
+  <Quadrilateral>
+    <Points>
       <Point>
-        <X>174</X>
-        <Y>145</Y>
+        <X>367</X>
+        <Y>24</Y>
       </Point>
       <Point>
-        <X>166</X>
-        <Y>176</Y>
+        <X>453</X>
+        <Y>27</Y>
       </Point>
       <Point>
-        <X>215</X>
-        <Y>207</Y>
+        <X>453</X>
+        <Y>189</Y>
+      </Point>
+      <Point>
+        <X>346</X>
+        <Y>183</Y>
       </Point>
     </Points>
-    <RgbaColor>-32704</RgbaColor>
+    <RgbaColor>-65408</RgbaColor>
     <Color />
   </Quadrilateral>
 </ArrayOfQuadrilateral>

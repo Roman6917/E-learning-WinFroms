@@ -56,7 +56,7 @@ namespace Quadrilateral_Task2
 
         private void PanelMain_DoubleClick(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent  = e as MouseEventArgs;
+            MouseEventArgs mouseEvent = e as MouseEventArgs;
             if (mouseEvent.Button == MouseButtons.Left)
             {
                 Point point = new Point(mouseEvent.Location.X, mouseEvent.Location.Y);
@@ -94,14 +94,14 @@ namespace Quadrilateral_Task2
 
         private void ShapesMenuDropDown_Click(object sender, EventArgs e)
         {
-            string filename = (sender as ToolStripMenuItem).Text;          
+            string filename = (sender as ToolStripMenuItem).Text;
             quadrilaterals.AddRange(QuadrilateralBL.LoadFigures(filename));
             Graphic.Redraw(panelMain, graphics, quadrilaterals);
         }
 
         private void PanelMain_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent  = e as MouseEventArgs;
+            MouseEventArgs mouseEvent = e as MouseEventArgs;
             if (mouseEvent.Button == MouseButtons.Right)
             {
                 Point point = new Point(mouseEvent.Location.X, mouseEvent.Location.Y);
@@ -119,10 +119,10 @@ namespace Quadrilateral_Task2
                 {
                     if (activeQquadrilateral == null)
                     {
-                        throw new ApplicationException("");
+                        throw new ApplicationException("error, this figure does not exist ... ");
                     }
                     quadrilaterals.Remove(activeQquadrilateral);
-                    activeQquadrilateral = QuadrilateralBL.Shift(activeQquadrilateral, point);                    
+                    activeQquadrilateral = QuadrilateralBL.MoveToPoint(activeQquadrilateral, point);
                     quadrilaterals.Add(activeQquadrilateral);
                     Graphic.Redraw(panelMain, graphics, quadrilaterals);
                 }
@@ -133,6 +133,14 @@ namespace Quadrilateral_Task2
         {
             isFigureChecked = false;
             UI.Hide(labelFigureChecked, buttonCancel, buttonPolygonColor);
+        }
+
+        private void InformationMenu_Click(object sender, EventArgs e)
+        { 
+            if (UI.CreateInformationWindow() == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

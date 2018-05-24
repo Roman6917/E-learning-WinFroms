@@ -55,6 +55,7 @@ namespace Quadrilateral_Task2
             this.labelInfo = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelFigureChecked = new System.Windows.Forms.Label();
+            this.informationMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.headerMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@ namespace Quadrilateral_Task2
             this.headerMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.headerMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
-            this.shapesMenu});
+            this.shapesMenu,
+            this.informationMenu});
             this.headerMenu.Location = new System.Drawing.Point(0, 0);
             this.headerMenu.Name = "headerMenu";
             this.headerMenu.Size = new System.Drawing.Size(1269, 33);
@@ -213,6 +215,13 @@ namespace Quadrilateral_Task2
     "змінити колір\r\n\r\n";
             this.labelFigureChecked.Visible = false;
             // 
+            // informationMenu
+            // 
+            this.informationMenu.Name = "informationMenu";
+            this.informationMenu.Size = new System.Drawing.Size(118, 29);
+            this.informationMenu.Text = "Information";
+            this.informationMenu.Click += new System.EventHandler(this.InformationMenu_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -280,6 +289,7 @@ namespace Quadrilateral_Task2
         private Label labelInfo;
         private Button buttonCancel;
         private Label labelFigureChecked;
+        private ToolStripMenuItem informationMenu;
     }
 }
 

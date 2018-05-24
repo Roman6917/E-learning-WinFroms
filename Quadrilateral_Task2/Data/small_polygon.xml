@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ArrayOfQuadrilateral xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Quadrilateral>
+    <Points>
+      <Point>
+        <X>44</X>
+        <Y>32</Y>
+      </Point>
+      <Point>
+        <X>47</X>
+        <Y>73</Y>
+      </Point>
+      <Point>
+        <X>75</X>
+        <Y>53</Y>
+      </Point>
+      <Point>
+        <X>77</X>
+        <Y>24</Y>
+      </Point>
+    </Points>
+    <RgbaColor>-16777216</RgbaColor>
+    <Color />
+  </Quadrilateral>
+</ArrayOfQuadrilateral>

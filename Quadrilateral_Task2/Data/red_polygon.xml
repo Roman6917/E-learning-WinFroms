@@ -3,23 +3,23 @@
   <Quadrilateral>
     <Points>
       <Point>
-        <X>156</X>
-        <Y>129</Y>
+        <X>67</X>
+        <Y>39</Y>
       </Point>
       <Point>
-        <X>253</X>
-        <Y>139</Y>
+        <X>357</X>
+        <Y>54</Y>
       </Point>
       <Point>
-        <X>257</X>
-        <Y>165</Y>
+        <X>343</X>
+        <Y>177</Y>
       </Point>
       <Point>
-        <X>123</X>
-        <Y>211</Y>
+        <X>82</X>
+        <Y>162</Y>
       </Point>
     </Points>
-    <RgbaColor>-16711681</RgbaColor>
+    <RgbaColor>-65536</RgbaColor>
     <Color />
   </Quadrilateral>
 </ArrayOfQuadrilateral>
